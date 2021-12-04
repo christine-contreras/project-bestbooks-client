@@ -21,7 +21,6 @@ const Comments = ({
       method: 'DELETE',
     })
       .then((response) => {
-        console.log(response)
         if (response.ok) {
           const newCommentsList = comments.filter((c) => c.id !== commentId)
           setComments(newCommentsList)

@@ -7,11 +7,6 @@ import { Grid, Paper, MenuList, MenuItem, Tooltip } from '@mui/material'
 
 const BookclubMenu = ({ user, bookclub }) => {
   let location = useLocation()
-  // const [admin, setAdmin] = React.useState(false)
-
-  React.useEffect(() => {
-    // setAdmin(user.id === bookclub.admin.id ? true : false)
-  }, [])
 
   return (
     <Paper sx={{ p: 4 }}>

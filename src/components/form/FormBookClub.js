@@ -85,7 +85,7 @@ const FormBookClub = ({ bookclub, setCurrentBookclub, fetchUser }) => {
             fetchUser()
             navigate('/profile/my-bookclubs')
           } else {
-            setErrors(err)
+            setErrors(err.errors || [err.error])
           }
         })
       }

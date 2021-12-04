@@ -73,7 +73,7 @@ const FormProfile = ({ user, handleCheckLogin }) => {
           handleCheckLogin()
         })
       } else {
-        response.json().then((err) => setErrors(err.errors))
+        response.json().then((err) => setErrors(err.errors || [err.error]))
       }
     })
   }

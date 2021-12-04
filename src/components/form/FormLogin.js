@@ -28,7 +28,7 @@ const FormLogin = ({ onLogin }) => {
           .then((user) => onLogin(user))
           .then(navigate('/'))
       } else {
-        response.json().then((err) => setErrors(err.errors))
+        response.json().then((err) => setErrors(err.errors || [err.error]))
       }
     })
   }

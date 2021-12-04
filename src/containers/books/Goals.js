@@ -16,7 +16,6 @@ const Goals = ({ goals, edit, pagecount, bookClubBookId, setGoals, user }) => {
       method: 'DELETE',
     })
       .then((response) => {
-        console.log(response)
         if (response.ok) {
           const newGoalList = goals.filter((g) => g.id !== goalId)
           setGoals(newGoalList)

@@ -11,7 +11,6 @@ import {
   MenuItem,
 } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import { brown } from '@mui/material/colors'
 
 const FormAddToWishlist = ({ bookclubs, book }) => {
   let navigate = useNavigate()
@@ -50,12 +49,10 @@ const FormAddToWishlist = ({ bookclubs, book }) => {
       if (response.ok) {
         response.json().then((data) => {
           setUpdated(true)
-          console.log(data)
         })
       } else {
         response.json().then((err) => {
-          console.log(err)
-          // setErrors(err.errors)
+          setErrors(err.errors || [err.error])
         })
       }
     })
@@ -77,13 +74,15 @@ const FormAddToWishlist = ({ bookclubs, book }) => {
         </Select>
       </FormControl>
 
-      <Button
-        type='submit'
-        variant='contained'
-        className='b-radius btn btn-lg'
-        color='primary'>
-        Add To Wishlist
-      </Button>
+      {!updated && (
+        <Button
+          type='submit'
+          variant='contained'
+          className='b-radius btn btn-lg'
+          color='primary'>
+          Add To Wishlist
+        </Button>
+      )}
 
       <Stack
         sx={{ width: '70%', margin: 'auto' }}
@@ -106,10 +105,10 @@ const FormAddToWishlist = ({ bookclubs, book }) => {
               Book Added To Wishlist.
             </Alert>
             <Button
-              variant='text'
-              color='secondary'
-              sx={{ color: brown[900], p: 2 }}
-              className='link b-radius'
+              variant='outlined'
+              color='primary'
+              // sx={{ color: brown[900], p: 2 }}
+              className='btn b-radius btn-lg'
               endIcon={<ArrowForwardIosIcon />}
               onClick={() => navigate(`/bookclub/${bookClubId}/wishlist`)}>
               View Wishlist

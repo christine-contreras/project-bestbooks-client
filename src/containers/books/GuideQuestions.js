@@ -21,7 +21,6 @@ const GuideQuestions = ({
       method: 'DELETE',
     })
       .then((response) => {
-        console.log(response)
         if (response.ok) {
           const newQuestionList = guideQuestions.filter(
             (g) => g.id !== questionId

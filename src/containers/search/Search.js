@@ -2,8 +2,6 @@ import * as React from 'react'
 import { Grid } from '@mui/material'
 import ListResults from './ListResults'
 import BookResults from './BookResults'
-//dummy data
-// import { list } from '../../helpers/list'
 
 const Search = ({
   recommendationLists,

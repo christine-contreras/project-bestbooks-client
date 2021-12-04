@@ -21,12 +21,6 @@ const CommentForm = ({
   const [loading, setLoading] = React.useState(false)
   const [errors, setErrors] = React.useState([])
 
-  //   React.useEffect(() => {
-  //     if (comment) {
-  //       setNewComment(comment.comment)
-  //     }
-  //   }, [comment])
-
   const handleSubmit = (e) => {
     e.preventDefault()
     setErrors([])

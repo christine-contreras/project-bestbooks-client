@@ -41,7 +41,7 @@ const CreateBookclubModal = ({
         })
       } else {
         response.json().then((err) => {
-          setErrors(err.errors)
+          setErrors(err.errors || [err.error])
         })
       }
     })

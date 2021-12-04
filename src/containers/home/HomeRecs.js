@@ -1,23 +1,24 @@
 import * as React from 'react'
 import Recommendation from '../../components/home/Recommendation'
 import { Grid, Typography, Button } from '@mui/material'
-import { data } from '../../helpers/booksrec'
 import { useNavigate } from 'react-router-dom'
 
-const apiKey = process.env.REACT_APP_API_BOOKS
-
-const HomeRecs = ({ user, recommendationLists, handleListSearch }) => {
+const HomeRecs = ({ recommendationLists, handleListSearch }) => {
   let navigate = useNavigate()
   const [recommendations, setRecommendations] = React.useState(
     recommendationLists
-      ? recommendationLists[Math.floor(Math.random() * data.length)]
+      ? recommendationLists[
+          Math.floor(Math.random() * recommendationLists.length)
+        ]
       : null
   )
 
   React.useEffect(() => {
     setRecommendations(
       recommendationLists
-        ? recommendationLists[Math.floor(Math.random() * data.length)]
+        ? recommendationLists[
+            Math.floor(Math.random() * recommendationLists.length)
+          ]
         : null
     )
   }, [recommendationLists])

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import theme from './theme/theme'
-import './css/App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
@@ -22,9 +21,6 @@ import BookClubCurrenBook from './containers/bookclubs/BookClubCurrenBook'
 import BookClubWishlist from './containers/bookclubs/BookClubWishlist'
 import BookClubHistory from './containers/bookclubs/BookClubHistory'
 
-//dummy data
-import { data } from './helpers/booksrec'
-import { bookinfo } from './helpers/bookinfo'
 const apiKey = process.env.REACT_APP_API_BOOKS
 
 function App() {
@@ -80,9 +76,6 @@ function App() {
       .catch((err) => {
         console.error(err)
       })
-
-    //fake data
-    // setRecommendationLists(data)
   }
 
   const handleListSearch = (listId) => {
@@ -150,7 +143,6 @@ function App() {
       .catch((err) => {
         console.error(err)
       })
-    // setCurrentBook(bookinfo)
   }
 
   const handleFetchBookClub = (bookClubId) => {
