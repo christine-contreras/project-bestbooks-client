@@ -53,7 +53,7 @@ const BookclubMenu = ({ user, bookclub }) => {
                     : null
                 }>
                 <Link to={`/bookclub/${bookclub.id}/admin-dashboard`}>
-                  Book Club Setting
+                  Book Club Settings
                 </Link>
               </MenuItem>
             </Tooltip>
