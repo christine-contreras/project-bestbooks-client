@@ -196,7 +196,7 @@ const BookOverview = ({
                   variant='contained'
                   className='b-radius btn btn-lg'
                   color='primary'>
-                  Add To Book Club
+                  Add To A Wishlist
                 </Button>
               </Grid>
             )}

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import BookClubInfo from '../bookclub/BookClubInfo'
 
-import { Grid, Paper, MenuList, MenuItem } from '@mui/material'
+import { Grid, Paper, MenuList, MenuItem, Tooltip } from '@mui/material'
 
 const BookclubMenu = ({ user, bookclub }) => {
   let location = useLocation()
@@ -48,14 +48,20 @@ const BookclubMenu = ({ user, bookclub }) => {
           </MenuItem>
 
           {user && bookclub && user.id === bookclub.admin.id && (
-            <MenuItem
-              className={
-                location.pathname.includes('admin-dashboard') ? 'active' : null
-              }>
-              <Link to={`/bookclub/${bookclub.id}/admin-dashboard`}>
-                Admin Dashboard{' '}
-              </Link>
-            </MenuItem>
+            <Tooltip
+              title='edit book club users and info'
+              placement='bottom-end'>
+              <MenuItem
+                className={
+                  location.pathname.includes('admin-dashboard')
+                    ? 'active'
+                    : null
+                }>
+                <Link to={`/bookclub/${bookclub.id}/admin-dashboard`}>
+                  Book Club Setting
+                </Link>
+              </MenuItem>
+            </Tooltip>
           )}
         </MenuList>
       </Grid>
