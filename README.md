@@ -26,6 +26,8 @@ npm start
 
 ```
 
+Setup to use port 4000 and use an API on port 3000
+
 ## Features
 
 ### App
