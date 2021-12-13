@@ -44,7 +44,6 @@ const SignUp = ({ onLogin, onLogout, user }) => {
                   Login To Best Books
                 </Typography>
                 <FormLogin onLogin={onLogin} />
-                {/* <Link to='/join-bestbooks'>Not A Member Yet? Create A Login</Link> */}
               </>
             )
           ) : (
