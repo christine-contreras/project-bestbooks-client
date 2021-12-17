@@ -235,7 +235,7 @@ const FormBookClub = ({ bookclub, setCurrentBookclub, fetchUser }) => {
 
         {updated && (
           <Alert severity='success' variant='filled'>
-            Profile Updated
+            Book Club Updated
           </Alert>
         )}
       </Stack>

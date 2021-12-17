@@ -234,7 +234,6 @@ function App() {
                   />
                 }></Route>
 
-              {/* still need to make functionality of adding book to book club */}
               <Route path='book' element={<BookPage />}>
                 <Route
                   path=':id'

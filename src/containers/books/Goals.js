@@ -4,7 +4,6 @@ import { Grid, Typography, Button } from '@mui/material'
 import { Timeline } from '@mui/lab'
 import Goal from '../../components/book/Goal'
 import GoalModal from '../../components/form/GoalModal'
-
 const Goals = ({ goals, edit, pagecount, bookClubBookId, setGoals, user }) => {
   //handle modal
   const [openModal, setOpenModal] = React.useState(false)
